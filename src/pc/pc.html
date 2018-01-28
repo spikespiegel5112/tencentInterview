@@ -415,9 +415,7 @@
         </ul>
     </div>
     <div class="herolistindex_wrapper">
-        <a class="gototop">
-
-        </a>
+        <a class="gototop"></a>
         <ul>
             <li class="active">
                 <a></a>
@@ -544,19 +542,67 @@
     </div>
 </div>
 </body>
-<script src="assets/js/jquery-3.3.1.min.js"></script>
-<script src="js/util.js"></script>
 <script>
-    (function () {
-        $(function () {
-            var index = {
+	(function () {
+		window.onload = function () {
+			window.getElementsByClassName = function (classNames) {
+				classNames = classNames.replace(/^./, '');
+				var classObj = [];
+				var classIndex = 0;
+				var tags = document.getElementsByTagName("*");
+				for (var i in tags) {
+					if (tags[i].nodeType === 1) {
+						if (tags[i].getAttribute("class") === classNames) {
+							classObj[classIndex] = tags[i];
+							classIndex++;
+						}
+					}
+				}
+				return classObj;
+			};
+			var index = {
+				onScroll: function () {
+					var result = 0;
+					var bodyHeight = document.body.clientHeight;
+					var windowHeight = window.innerHeight;
+					var offset = 700;
+					var listEl = getElementsByClassName('.herolistindex_wrapper')[0];
+					var heroListEl = getElementsByClassName('.herolist_wrapper')[0];
+					var heroListLength = heroListEl.children[0].children.length-1;
+					var listScrollTop = 0;
 
-                init: function () {
+					window.onscroll = function () {
+						if (document.body.scrollTop - offset <= 0) {
+							listScrollTop = 0
+						} else {
+							listScrollTop = document.body.scrollTop - offset
+						}
+						console.log(listScrollTop)
+						console.log(heroListLength);
 
-                }
-            }
-            index.init();
-        })
-    })($)
+						if (listScrollTop > 470 * heroListLength) {
+							listScrollTop = 470 * heroListLength
+						}
+
+						console.log(listScrollTop)
+						var level = Math.floor(listScrollTop / 470);
+						if (result !== level) {
+							result = level;
+							var length = listEl.childNodes[3].children.length;
+							for (var index = 0; index < length; index++) {
+								listEl.childNodes[3].children[index].className = ''
+							}
+							console.log(result)
+							listEl.childNodes[3].children[result].setAttribute('class', 'active')
+						}
+					}
+				},
+				init: function () {
+					this.onScroll();
+				}
+			};
+			index.init();
+		}
+	})()
 </script>
 </html>
