@@ -1,0 +1,428 @@
+html, body {
+	min-height: 100%;
+	font: 12px/1.5 arial, "\5FAE\8F6F\96C5\9ED1", sans-serif;
+}
+
+* {
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	-webkit-tap-highlight-color: transparent; /* For some Androids */
+}
+
+.common_main_container {
+	width: 100%;
+	height: 2860px;
+	background: url("../image/bg.jpg") no-repeat #eee;
+	background-size: cover;
+	background-position: center;
+	overflow: hidden;
+	position: relative;
+	.header {
+		width: 100%;
+		text-align: center;
+		font-size: 0;
+		position: absolute;
+		.inner {
+			margin: 0 auto;
+			width: 960px;
+			.logo {
+				display: inline-block;
+				width: 50%;
+				li {
+					display: inline-block;
+					margin: 0 10px 0 0;
+					vertical-align: middle;
+					background-image: url("../image/sprite.png");
+				}
+				.lol {
+					background-position: 0px -90px;
+					width: 170px;
+					height: 115px;
+				}
+				.daojucheng {
+					background-position: 0px -210px;
+					width: 270px;
+					height: 65px;
+				}
+			}
+			.login {
+				display: inline-block;
+				width: 50%;
+				font-size: 18px;
+				text-align: right;
+				a {
+					color: #fff;
+				}
+			}
+		}
+	}
+	.banner {
+		width: 100%;
+		overflow: hidden;
+		transform: rotate(-7deg);
+		color: #fff;
+		.figure {
+			margin: 0 auto;
+			width: 580px;
+			img {
+				display: block;
+				width: 100%;
+			}
+		}
+		.sologen {
+			margin: 285px 0 0 0;
+			width: 100%;
+
+			ul {
+				li {
+					//width: 620px;
+					width: 100%;
+					text-align: center;
+					position: relative;
+					img {
+						display: inline-block;
+					}
+					&.title1 {
+						position: relative;
+						top: 10px;
+						right: 110px;
+					}
+					&.title2 {
+						position: relative;
+						bottom: 0px;
+						left: 135px;
+					}
+				}
+			}
+		}
+		.desc {
+			font-size: 20px;
+			text-align: center;
+			font-style: italic;
+			.content1 {
+				position: relative;
+				right: 130px;
+			}
+			.content2 {
+				position: relative;
+				left: 60px;
+			}
+			.date {
+				margin: 10px 0 0 0;
+				label {
+					display: inline-block;
+					margin: 0 5px 0 0;
+					//padding: 0px 10px;
+					height: 25px;
+					line-height: 25px;
+					color: #181b47;
+					font-weight: bolder;
+					position: relative;
+					span {
+						z-index: 2;
+						position: relative;
+					}
+					i {
+						display: inline-block;
+						padding: 0 0 0 5px;
+						width: 100%;
+						height: 100%;
+						background: #a841ff;
+						position: absolute;
+						left: 0;
+						top: 0;
+						z-index: 1;
+						transform: skew(-17deg);
+						vertical-align: middle;
+					}
+				}
+			}
+			.button {
+				display: inline-block;
+				margin: 20px 0 0 0;
+				width: 350px;
+				height: 85px;
+				line-height: 85px;
+				background-image: url(../image/sprite.png);
+				background-position: 0px 0px;
+				font-size: 26px;
+				color: #ffd600;
+				span {
+					font-weight: bold;
+				}
+			}
+		}
+	}
+	.herolist_wrapper {
+		margin: 40px auto 150px;
+		width: 960px;
+		color: #fff;
+		> ul {
+			> li {
+				padding: 50px 0 0 0;
+				overflow: hidden;
+				.title {
+
+					.name {
+						display: inline-block;
+						padding: 0 0 0 20px;
+						width: 600px;
+						font-size: 42px;
+						vertical-align: middle;
+						label {
+							font-weight: bold;
+						}
+						span {
+							color: #9052fb;
+						}
+					}
+					.hint {
+						display: inline-block;
+						width: 230px;
+						font-size: 15px;
+						line-height: 50px;
+						vertical-align: middle;
+						text-align: right;
+						color: #9052fb;
+						span {
+							display: inline-block;
+							font-size: 100px;
+							line-height: 50px;
+							font-weight: bold;
+							vertical-align: middle;
+							color: #ffd600;
+						}
+					}
+				}
+				.merchandiselist {
+					margin: 20px 0 0 0;
+					width: 100%;
+					li {
+						display: inline-block;
+						margin: 0 0 0 5px;
+						width: 150px;
+						height: 250px;
+						a {
+							display: block;
+							width: 100%;
+							height: 250px;
+							.merchandisepic {
+								width: 100%;
+								height: 200px;
+								background-color: #1f224b;
+								position: relative;
+								.unknown {
+									display: block;
+									width: 100%;
+									height: 100%;
+									overflow: hidden;
+									label {
+										display: block;
+										margin: 60px auto 0;
+										width: 85px;
+										height: 85px;
+										cursor: pointer;
+										background-image: url(../image/sprite.png);
+										background-position: -175px -90px;
+									}
+								}
+								.pricetag {
+									position: absolute;
+									bottom: 0;
+									width: 100%;
+									height: 50%;
+									.content {
+										padding: 10px 0 0 0;
+										position: absolute;
+										bottom: 10px;
+										width: 100%;
+										text-align: center;
+										color: #fff;
+										z-index: 1;
+										.presentprice {
+											color: #ffd600;
+											font-size: 13px;
+											font-weight: bolder;
+										}
+									}
+									.bg {
+										display: block;
+										width: 100%;
+										height: 100%;
+										background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(0, 0, 0, 0.8)));
+										position: absolute;
+										top: 0;
+										z-index: 0;
+									}
+								}
+							}
+							.title {
+								margin: 5px 0 0 0;
+								width: 146px;
+								height: 35px;
+								line-height: 35px;
+								color: #955afb;
+								border: 2px solid #955afb;
+								text-align: center;
+								transition: all 0.3s;
+								.arrow {
+									display: inline-block;
+									background-image: url(../image/sprite.png);
+									background-position: -526px -14px;
+									width: 20px;
+									height: 20px;
+									vertical-align: middle;
+								}
+								label {
+									display: inline-block;
+									vertical-align: middle;
+								}
+							}
+							&:hover {
+								transition: all 0.3s;
+								.title {
+									color: #ffd600;
+									border: 2px solid #ffd600;
+								}
+								.arrow {
+									display: inline-block;
+									background-image: url(../image/sprite.png);
+									background-position: -476px -14px;
+									width: 20px;
+									height: 20px;
+									vertical-align: middle;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		.dash {
+			margin: 65px 0 0 0;
+			width: 100%;
+			height: 13px;
+			font-size: 0;
+			.segment {
+				display: inline-block;
+				width: 480px;
+				height: 9px;
+				background-image: url(../image/sprite.png);
+				background-position: -355px 0px;
+			}
+		}
+	}
+	.rules{
+		margin: 0 auto;
+		width: 600px;
+		text-align: center;
+		color: #acacac;
+
+		h1{
+			font-size: 37px;
+			font-weight: lighter;
+			line-height: 70px;
+			color: #9279f3;
+		}
+		ul{
+			li{
+				font-size: 13px;
+				span{
+					display: inline-block;
+					width: 15px;
+					height: 15px;
+					line-height: 15px;
+					background: #483a94;
+					border-radius: 50%;
+				}
+				label{
+					color: #ffe900;
+				}
+				a{
+					padding: 5px;
+					background: #9052fb;
+					font-size: 12px;
+					&:hover{
+						background: #862efb;
+						transition: all 0.3s;
+					}
+				}
+			}
+		}
+	}
+	.footer{
+		width: 100%;
+		height: 65px;
+		text-align: center;
+		color: #786fa5;
+		font-size: 12px;
+		position: absolute;
+		bottom: 0;
+		ul{
+			li{
+				display: inline-block;
+				a{
+					color: #786fa5;
+					&:hover{
+						text-decoration: underline;
+					}
+				}
+			}
+		}
+	}
+}
+
+.common_avatar_item {
+	display: inline-block;
+	width: 75px;
+	height: 75px;
+	border: 2px solid #7245cb;
+	border-radius: 50%;
+	vertical-align: middle;
+	background-image: url(../image/sprite.png);
+	background-position: -176px -90px;
+	background-color: #2e285b;
+}
+
+.herolistindex_wrapper {
+	width: 150px;
+	position: fixed;
+	top: 140px;
+	right: 75px;
+	.gototop{
+		display: block;
+		margin: 0 auto;
+		background-image: url(../image/sprite.png);
+		background-position: -415px -14px;
+		width: 56px;
+		height: 40px;
+	}
+	ul {
+		li {
+			display: inline-block;
+			margin: 10px 0;
+			width: 60px;
+			height: 60px;
+			border: 4px solid #955afb;
+			border-radius: 50%;
+			opacity: 0.5;
+			transition: all 0.3s;
+			background-image: url(../image/sprite.png);
+			background-position: -352px -11px;
+			vertical-align: middle;
+			img {
+				display: inline-block;
+				width: 100%;
+				height: 100%;
+			}
+			&.active {
+				opacity: 1;
+				border: 4px solid #ffe200;
+			}
+			&:hover {
+				opacity: 1;
+				transition: all 0.3s;
+			}
+		}
+	}
+
+}
