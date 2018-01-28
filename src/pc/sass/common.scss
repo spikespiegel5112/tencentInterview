@@ -21,6 +21,7 @@ html, body {
 		text-align: center;
 		font-size: 0;
 		position: absolute;
+		z-index: 1;
 		.inner {
 			margin: 0 auto;
 			width: 960px;
@@ -51,6 +52,9 @@ html, body {
 				text-align: right;
 				a {
 					color: #fff;
+					&:hover{
+						color: #ffe200;
+					}
 				}
 			}
 		}
@@ -78,18 +82,31 @@ html, body {
 					width: 100%;
 					text-align: center;
 					position: relative;
+
 					img {
 						display: inline-block;
 					}
 					&.title1 {
 						position: relative;
 						top: 10px;
-						right: 110px;
+						right: 1250px;
+						transition: all 0.3s;
+						&.active{
+							top: 10px;
+							right: 110px;
+							transition: all 0.3s;
+						}
 					}
 					&.title2 {
 						position: relative;
-						bottom: 0px;
-						left: 135px;
+						bottom: 0;
+						left: 1250px;
+						transition: all 0.3s;
+						&.active{
+							bottom: 0;
+							left: 135px;
+							transition: all 0.3s;
+						}
 					}
 				}
 			}
@@ -142,12 +159,34 @@ html, body {
 				width: 350px;
 				height: 85px;
 				line-height: 85px;
-				background-image: url(../image/sprite.png);
-				background-position: 0px 0px;
 				font-size: 26px;
 				color: #ffd600;
+				transition: all 0.3s;
+				position: relative;
+				.border{
+					display: block;
+					width: 100%;
+					height: 100%;
+					opacity: 1;
+					background-image: url(../image/sprite.png);
+					background-position: 0px 0px;
+					position: absolute;
+					top: 0;
+				}
 				span {
 					font-weight: bold;
+				}
+				&:hover{
+					color: #c8a600;
+					transition: all 0.3s;
+				}
+				&:active{
+					color: #8a7300;
+					transition: all 0.3s;
+					.border{
+						opacity: 1;
+
+					}
 				}
 			}
 		}
@@ -230,6 +269,8 @@ html, body {
 									bottom: 0;
 									width: 100%;
 									height: 50%;
+									opacity: 0.7;
+									transition: all 0.3s;
 									.content {
 										padding: 10px 0 0 0;
 										position: absolute;
@@ -254,6 +295,7 @@ html, body {
 										z-index: 0;
 									}
 								}
+
 							}
 							.title {
 								margin: 5px 0 0 0;
@@ -291,6 +333,11 @@ html, body {
 									height: 20px;
 									vertical-align: middle;
 								}
+								.pricetag{
+									display: block;
+									opacity: 1;
+									transition: all 0.3s;
+								}
 							}
 						}
 					}
@@ -311,22 +358,22 @@ html, body {
 			}
 		}
 	}
-	.rules{
+	.rules {
 		margin: 0 auto;
 		width: 600px;
 		text-align: center;
 		color: #acacac;
 
-		h1{
+		h1 {
 			font-size: 37px;
 			font-weight: lighter;
 			line-height: 70px;
 			color: #9279f3;
 		}
-		ul{
-			li{
+		ul {
+			li {
 				font-size: 13px;
-				span{
+				span {
 					display: inline-block;
 					width: 15px;
 					height: 15px;
@@ -334,14 +381,14 @@ html, body {
 					background: #483a94;
 					border-radius: 50%;
 				}
-				label{
+				label {
 					color: #ffe900;
 				}
-				a{
+				a {
 					padding: 5px;
 					background: #9052fb;
 					font-size: 12px;
-					&:hover{
+					&:hover {
 						background: #862efb;
 						transition: all 0.3s;
 					}
@@ -349,21 +396,33 @@ html, body {
 			}
 		}
 	}
-	.footer{
+	.footer {
 		width: 100%;
-		height: 65px;
+		height: 55px;
 		text-align: center;
 		color: #786fa5;
-		font-size: 12px;
 		position: absolute;
 		bottom: 0;
-		ul{
-			li{
+		ul {
+			font-size: 0;
+			line-height: 18px;
+			li {
 				display: inline-block;
-				a{
+				line-height: 18px;
+				font-size: 12px;
+				vertical-align: middle;
+				a {
+					padding: 0 5px 0 4px;
 					color: #786fa5;
-					&:hover{
+					border-left: 1px solid #786fa5;
+					&:hover {
 						text-decoration: underline;
+					}
+				}
+				&:first-child{
+					a{
+						border:0;
+
 					}
 				}
 			}
@@ -388,7 +447,7 @@ html, body {
 	position: fixed;
 	top: 140px;
 	right: 75px;
-	.gototop{
+	.gototop {
 		display: block;
 		margin: 0 auto;
 		background-image: url(../image/sprite.png);
@@ -405,15 +464,27 @@ html, body {
 			border: 4px solid #955afb;
 			border-radius: 50%;
 			opacity: 0.5;
-			transition: all 0.3s;
-			background-image: url(../image/sprite.png);
-			background-position: -352px -11px;
 			vertical-align: middle;
-			img {
+			transition: all 0.3s;
+			a {
 				display: inline-block;
 				width: 100%;
 				height: 100%;
+				.unknown {
+					display: inline-block;
+					width: 100%;
+					height: 100%;
+					background-image: url(../image/sprite.png);
+					background-position: -352px -11px;
+					vertical-align: middle;
+				}
+				img {
+					display: inline-block;
+					width: 100%;
+					height: 100%;
+				}
 			}
+
 			&.active {
 				opacity: 1;
 				border: 4px solid #ffe200;

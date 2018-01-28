@@ -9,7 +9,7 @@
 </head>
 <body>
 <div class="common_main_container">
-    <div class="header">
+    <div class="header" id="level0">
         <div class="inner">
             <div class="logo">
                 <ul>
@@ -25,7 +25,6 @@
                 <a>您好，请登录</a>
             </div>
         </div>
-
     </div>
     <div class="banner">
         <div class="sologen">
@@ -47,13 +46,18 @@
                     2014年7月25日~2014年8月1日
                 </span>
             </p>
-            <a class="button">试试手气<span>抽折扣</span></a>
+            <a class="button">
+                <span class="border">
+
+                </span>
+                试试手气<span>抽折扣</span>
+            </a>
         </div>
 
     </div>
     <div class="herolist_wrapper">
         <ul>
-            <li>
+            <li id="level1">
                 <div class="title">
                     <span class="common_avatar_item"></span>
                     <p class="name">
@@ -63,7 +67,7 @@
                     <p class="hint">请选择一款皮肤购买<span>8</span>折</p>
                 </div>
                 <ul class="merchandiselist">
-                    <li>
+                    <li name="level1">
                         <a>
                             <div class="merchandisepic">
                                 <span class="unknown">
@@ -147,7 +151,7 @@
                     <div class="segment"></div>
                 </div>
             </li>
-            <li>
+            <li id="level2">
                 <div class="title">
                     <span class="common_avatar_item">
                         <img src="image/static/avatar/js.png"/>
@@ -279,7 +283,7 @@
                     <div class="segment"></div>
                 </div>
             </li>
-            <li>
+            <li id="level3">
                 <div class="title">
                     <span class="common_avatar_item">
                         <img src="image/static/avatar/gl.png"/>
@@ -415,10 +419,12 @@
         </ul>
     </div>
     <div class="herolistindex_wrapper">
-        <a class="gototop"></a>
+        <a class="gototop" id="gototop"></a>
         <ul>
             <li class="active">
-                <a></a>
+                <a>
+                    <div class="unknown"></div>
+                </a>
             </li>
             <li>
                 <a>
@@ -536,8 +542,7 @@
         <p class="copyright">
             COPYRIGHT © 1998 – 2014 TENCENT. ALL RIGHTS RESERVED.
         </p>
-        <p>
-            腾讯公司 版权所有
+        <p>2014 腾讯公司 版权所有
         </p>
     </div>
 </div>
@@ -561,14 +566,13 @@
 				return classObj;
 			};
 			var index = {
+				listScrollTop: 0,
 				onScroll: function () {
 					var result = 0;
-					var bodyHeight = document.body.clientHeight;
-					var windowHeight = window.innerHeight;
-					var offset = 700;
+					var offset = 500;
 					var listEl = getElementsByClassName('.herolistindex_wrapper')[0];
 					var heroListEl = getElementsByClassName('.herolist_wrapper')[0];
-					var heroListLength = heroListEl.children[0].children.length-1;
+					var heroListLength = heroListEl.children[0].children.length - 1;
 					var listScrollTop = 0;
 
 					window.onscroll = function () {
@@ -577,14 +581,10 @@
 						} else {
 							listScrollTop = document.body.scrollTop - offset
 						}
-						console.log(listScrollTop)
-						console.log(heroListLength);
-
+						this.listScrollTop = listScrollTop;
 						if (listScrollTop > 470 * heroListLength) {
 							listScrollTop = 470 * heroListLength
 						}
-
-						console.log(listScrollTop)
 						var level = Math.floor(listScrollTop / 470);
 						if (result !== level) {
 							result = level;
@@ -595,10 +595,77 @@
 							console.log(result)
 							listEl.childNodes[3].children[result].setAttribute('class', 'active')
 						}
+						this.listScrollTop = document.body.scrollTop;
 					}
+				},
+				rePosition: function () {
+					var that = this;
+					var heroListLEl = getElementsByClassName('.herolistindex_wrapper')[0].children[1].getElementsByTagName('li');
+					console.log(heroListLEl);
+
+					for (var i = 0; i < heroListLEl.length; i++) {
+						heroListLEl[i].onclick = function (ev) {
+							var index = i;
+							return function () {
+								if (document.getElementById("level" + Number(index + 1))) {
+									that.goTo(470 * index + 500)
+								}
+							}
+						}(i)
+					}
+				},
+				goTo: function (range) {
+					range = (typeof range === 'undefined') ? 0 : range;
+					var period = 5;
+					var listScrollTop = document.body.scrollTop;
+					var timer = function () {
+						setTimeout(function () {
+							if (listScrollTop > range) {
+								if (Math.abs(listScrollTop - range) < 30) {
+									listScrollTop -= Math.abs(listScrollTop - range);
+								} else {
+									listScrollTop -= 30;
+								}
+							} else if (listScrollTop < range) {
+								if (Math.abs(listScrollTop - range) < 30) {
+									listScrollTop += Math.abs(listScrollTop - range);
+								} else {
+									listScrollTop += 30;
+								}
+							}
+							document.body.scrollTop = document.documentElement.scrollTop = listScrollTop;
+							if (listScrollTop - range !== 0) {
+								timer()
+							}
+						}, period)
+					};
+					timer();
+				},
+				goTop: function (range) {
+					range = (typeof range === 'undefined') ? 0 : range;
+					var that = this;
+					console.log(range)
+					var goTopEl = getElementsByClassName('.gototop')[0];
+					goTopEl.onclick = function () {
+						that.goTo()
+					}
+				},
+				animation: function () {
+					var sologenEl = getElementsByClassName('.sologen')[0].children[0].children;
+					setTimeout(function () {
+						for (var i = 0; i < sologenEl.length; i++) {
+							sologenEl[i].className = sologenEl[i].className + ' active'
+						}
+					}, 500);
+
+					console.log(sologenEl)
+
 				},
 				init: function () {
 					this.onScroll();
+					this.rePosition();
+					this.goTop();
+					this.animation();
 				}
 			};
 			index.init();

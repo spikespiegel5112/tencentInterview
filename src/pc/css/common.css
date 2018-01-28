@@ -19,7 +19,8 @@ html, body {
     width: 100%;
     text-align: center;
     font-size: 0;
-    position: absolute; }
+    position: absolute;
+    z-index: 1; }
     .common_main_container .header .inner {
       margin: 0 auto;
       width: 960px; }
@@ -46,6 +47,8 @@ html, body {
         text-align: right; }
         .common_main_container .header .inner .login a {
           color: #fff; }
+          .common_main_container .header .inner .login a:hover {
+            color: #ffe200; }
   .common_main_container .banner {
     width: 100%;
     overflow: hidden;
@@ -69,11 +72,21 @@ html, body {
         .common_main_container .banner .sologen ul li.title1 {
           position: relative;
           top: 10px;
-          right: 110px; }
+          right: 1250px;
+          transition: all 0.3s; }
+          .common_main_container .banner .sologen ul li.title1.active {
+            top: 10px;
+            right: 110px;
+            transition: all 0.3s; }
         .common_main_container .banner .sologen ul li.title2 {
           position: relative;
-          bottom: 0px;
-          left: 135px; }
+          bottom: 0;
+          left: 1250px;
+          transition: all 0.3s; }
+          .common_main_container .banner .sologen ul li.title2.active {
+            bottom: 0;
+            left: 135px;
+            transition: all 0.3s; }
     .common_main_container .banner .desc {
       font-size: 20px;
       text-align: center;
@@ -115,12 +128,29 @@ html, body {
         width: 350px;
         height: 85px;
         line-height: 85px;
-        background-image: url(../image/sprite.png);
-        background-position: 0px 0px;
         font-size: 26px;
-        color: #ffd600; }
+        color: #ffd600;
+        transition: all 0.3s;
+        position: relative; }
+        .common_main_container .banner .desc .button .border {
+          display: block;
+          width: 100%;
+          height: 100%;
+          opacity: 1;
+          background-image: url(../image/sprite.png);
+          background-position: 0px 0px;
+          position: absolute;
+          top: 0; }
         .common_main_container .banner .desc .button span {
           font-weight: bold; }
+        .common_main_container .banner .desc .button:hover {
+          color: #c8a600;
+          transition: all 0.3s; }
+        .common_main_container .banner .desc .button:active {
+          color: #8a7300;
+          transition: all 0.3s; }
+          .common_main_container .banner .desc .button:active .border {
+            opacity: 1; }
   .common_main_container .herolist_wrapper {
     margin: 40px auto 150px;
     width: 960px;
@@ -187,7 +217,9 @@ html, body {
                 position: absolute;
                 bottom: 0;
                 width: 100%;
-                height: 50%; }
+                height: 50%;
+                opacity: 0.7;
+                transition: all 0.3s; }
                 .common_main_container .herolist_wrapper > ul > li .merchandiselist li a .merchandisepic .pricetag .content {
                   padding: 10px 0 0 0;
                   position: absolute;
@@ -239,6 +271,10 @@ html, body {
                 width: 20px;
                 height: 20px;
                 vertical-align: middle; }
+              .common_main_container .herolist_wrapper > ul > li .merchandiselist li a:hover .pricetag {
+                display: block;
+                opacity: 1;
+                transition: all 0.3s; }
     .common_main_container .herolist_wrapper .dash {
       margin: 65px 0 0 0;
       width: 100%;
@@ -280,18 +316,27 @@ html, body {
           transition: all 0.3s; }
   .common_main_container .footer {
     width: 100%;
-    height: 65px;
+    height: 55px;
     text-align: center;
     color: #786fa5;
-    font-size: 12px;
     position: absolute;
     bottom: 0; }
-    .common_main_container .footer ul li {
-      display: inline-block; }
-      .common_main_container .footer ul li a {
-        color: #786fa5; }
-        .common_main_container .footer ul li a:hover {
-          text-decoration: underline; }
+    .common_main_container .footer ul {
+      font-size: 0;
+      line-height: 18px; }
+      .common_main_container .footer ul li {
+        display: inline-block;
+        line-height: 18px;
+        font-size: 12px;
+        vertical-align: middle; }
+        .common_main_container .footer ul li a {
+          padding: 0 5px 0 4px;
+          color: #786fa5;
+          border-left: 1px solid #786fa5; }
+          .common_main_container .footer ul li a:hover {
+            text-decoration: underline; }
+        .common_main_container .footer ul li:first-child a {
+          border: 0; }
 
 .common_avatar_item {
   display: inline-block;
@@ -324,14 +369,23 @@ html, body {
     border: 4px solid #955afb;
     border-radius: 50%;
     opacity: 0.5;
-    transition: all 0.3s;
-    background-image: url(../image/sprite.png);
-    background-position: -352px -11px;
-    vertical-align: middle; }
-    .herolistindex_wrapper ul li img {
+    vertical-align: middle;
+    transition: all 0.3s; }
+    .herolistindex_wrapper ul li a {
       display: inline-block;
       width: 100%;
       height: 100%; }
+      .herolistindex_wrapper ul li a .unknown {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        background-image: url(../image/sprite.png);
+        background-position: -352px -11px;
+        vertical-align: middle; }
+      .herolistindex_wrapper ul li a img {
+        display: inline-block;
+        width: 100%;
+        height: 100%; }
     .herolistindex_wrapper ul li.active {
       opacity: 1;
       border: 4px solid #ffe200; }
