@@ -1,593 +1,407 @@
 html, body {
-	min-height: 100%;
-	font: 12px/1.5 arial, "\5FAE\8F6F\96C5\9ED1", sans-serif;
-}
+  min-height: 100%;
+  font: 12px/1.5 arial, "\5FAE\8F6F\96C5\9ED1", sans-serif; }
 
 * {
-	-webkit-tap-highlight-color: transparent;
-	-webkit-tap-highlight-color: transparent;
-	/* For some Androids */
-}
+  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent;
+  /* For some Androids */ }
 
 .common_main_container {
-	width: 100%;
-	height: 2860px;
-	background: url("../image/bg.jpg") no-repeat #eee;
-	background-size: cover;
-	background-position: center;
-	overflow: hidden;
-	position: relative;
-}
-
-.common_main_container .header {
-	width: 100%;
-	text-align: center;
-	font-size: 0;
-	position: absolute;
-	z-index: 1;
-}
-
-.common_main_container .header .inner {
-	margin: 0 auto;
-	width: 960px;
-}
-
-.common_main_container .header .inner .logo {
-	display: inline-block;
-	width: 50%;
-}
-
-.common_main_container .header .inner .logo li {
-	display: inline-block;
-	margin: 0 10px 0 0;
-	vertical-align: middle;
-	background-image: url("../image/sprite.png");
-}
-
-.common_main_container .header .inner .logo .lol {
-	background-position: 0px -90px;
-	width: 170px;
-	height: 115px;
-}
-
-.common_main_container .header .inner .logo .daojucheng {
-	background-position: 0px -210px;
-	width: 270px;
-	height: 65px;
-}
-
-.common_main_container .header .inner .login {
-	display: inline-block;
-	width: 50%;
-	font-size: 18px;
-	text-align: right;
-}
-
-.common_main_container .header .inner .login a {
-	color: #fff;
-}
-
-.common_main_container .header .inner .login a:hover {
-	color: #ffe200;
-}
-
-.common_main_container .banner {
-	width: 100%;
-	overflow: hidden;
-	-webkit-transform: rotate(-7deg);
-	-ms-transform: rotate(-7deg);
-	transform: rotate(-7deg);
-	color: #fff;
-}
-
-.common_main_container .banner .figure {
-	margin: 0 auto;
-	width: 580px;
-}
-
-.common_main_container .banner .figure img {
-	display: block;
-	width: 100%;
-}
-
-.common_main_container .banner .sologen {
-	margin: 285px 0 0 0;
-	width: 100%;
-	position: relative;
-}
-
-.common_main_container .banner .sologen ul li {
-	width: 100%;
-	text-align: center;
-	position: relative;
-}
-
-.common_main_container .banner .sologen ul li img {
-	display: inline-block;
-}
-
-.common_main_container .banner .sologen ul li.title1 {
-	position: relative;
-	top: 10px;
-	right: 1250px;
-	-webkit-transition: all 0.3s;
-	transition: all 0.3s;
-}
-
-.common_main_container .banner .sologen ul li.title1.active {
-	top: 10px;
-	right: 110px;
-	-webkit-transition: all 0.3s;
-	transition: all 0.3s;
-}
-
-.common_main_container .banner .sologen ul li.title2 {
-	position: relative;
-	bottom: 0;
-	left: 1250px;
-	-webkit-transition: all 0.3s;
-	transition: all 0.3s;
-}
-
-.common_main_container .banner .sologen ul li.title2.active {
-	bottom: 0;
-	left: 135px;
-	-webkit-transition: all 0.3s;
-	transition: all 0.3s;
-}
-
-.common_main_container .banner .subtitle {
-	background-image: url("../image/sprite.png");
-	background-position: 0px -280px;
-	width: 270px;
-	height: 40px;
-	position: absolute;
-	right: 490px;
-	top: 90px;
-	opacity: 0;
-}
-
-.common_main_container .banner .subtitle.active {
-	opacity: 1;
-	-webkit-transition: all 1s;
-	transition: all 1s;
-}
-
-.common_main_container .banner .desc {
-	font-size: 20px;
-	text-align: center;
-	font-style: italic;
-}
-
-.common_main_container .banner .desc .content1 {
-	position: relative;
-	right: 130px;
-}
-
-.common_main_container .banner .desc .content2 {
-	position: relative;
-	left: 60px;
-}
-
-.common_main_container .banner .desc .date {
-	margin: 10px 0 0 0;
-}
-
-.common_main_container .banner .desc .date label {
-	display: inline-block;
-	margin: 0 5px 0 0;
-	height: 25px;
-	line-height: 25px;
-	color: #181b47;
-	font-weight: bolder;
-	position: relative;
-}
-
-.common_main_container .banner .desc .date label span {
-	z-index: 2;
-	position: relative;
-}
-
-.common_main_container .banner .desc .date label i {
-	display: inline-block;
-	padding: 0 0 0 5px;
-	width: 100%;
-	height: 100%;
-	background: #a841ff;
-	position: absolute;
-	left: 0;
-	top: 0;
-	z-index: 1;
-	-webkit-transform: skew(-17deg);
-	-ms-transform: skew(-17deg);
-	transform: skew(-17deg);
-	vertical-align: middle;
-}
-
-.common_main_container .banner .desc .button {
-	display: inline-block;
-	margin: 20px 0 0 0;
-	width: 350px;
-	height: 85px;
-	line-height: 85px;
-	font-size: 26px;
-	color: #ffd600;
-	-webkit-transition: all 0.3s;
-	transition: all 0.3s;
-	position: relative;
-}
-
-.common_main_container .banner .desc .button .border {
-	display: block;
-	width: 100%;
-	height: 100%;
-	opacity: 1;
-	background-image: url(../image/sprite.png);
-	background-position: 0px 0px;
-	position: absolute;
-	top: 0;
-}
-
-.common_main_container .banner .desc .button span {
-	font-weight: bold;
-}
-
-.common_main_container .banner .desc .button:hover {
-	color: #c8a600;
-	-webkit-transition: all 0.3s;
-	transition: all 0.3s;
-}
-
-.common_main_container .banner .desc .button:active {
-	color: #8a7300;
-	-webkit-transition: all 0.3s;
-	transition: all 0.3s;
-}
-
-.common_main_container .banner .desc .button:active .border {
-	opacity: 1;
-}
-
-.common_main_container .herolist_wrapper {
-	margin: 40px auto 150px;
-	width: 960px;
-	color: #fff;
-}
-
-.common_main_container .herolist_wrapper > ul > li {
-	padding: 50px 0 0 0;
-	overflow: hidden;
-}
-
-.common_main_container .herolist_wrapper > ul > li .title .name {
-	display: inline-block;
-	padding: 0 0 0 20px;
-	width: 600px;
-	font-size: 42px;
-	vertical-align: middle;
-}
-
-.common_main_container .herolist_wrapper > ul > li .title .name label {
-	font-weight: bold;
-}
-
-.common_main_container .herolist_wrapper > ul > li .title .name span {
-	color: #9052fb;
-}
-
-.common_main_container .herolist_wrapper > ul > li .title .hint {
-	display: inline-block;
-	width: 230px;
-	font-size: 15px;
-	line-height: 50px;
-	vertical-align: middle;
-	text-align: right;
-	color: #9052fb;
-}
-
-.common_main_container .herolist_wrapper > ul > li .title .hint span {
-	display: inline-block;
-	font-size: 100px;
-	line-height: 50px;
-	font-weight: bold;
-	vertical-align: middle;
-	color: #ffd600;
-}
-
-.common_main_container .herolist_wrapper > ul > li .merchandiselist {
-	margin: 20px 0 0 0;
-	width: 100%;
-}
-
-.common_main_container .herolist_wrapper > ul > li .merchandiselist li {
-	display: inline-block;
-	margin: 0 0 0 5px;
-	width: 150px;
-	height: 250px;
-}
-
-.common_main_container .herolist_wrapper > ul > li .merchandiselist li a {
-	display: block;
-	width: 100%;
-	height: 250px;
-}
-
-.common_main_container .herolist_wrapper > ul > li .merchandiselist li a .merchandisepic {
-	width: 100%;
-	height: 200px;
-	background-color: #1f224b;
-	position: relative;
-}
-
-.common_main_container .herolist_wrapper > ul > li .merchandiselist li a .merchandisepic .unknown {
-	display: block;
-	width: 100%;
-	height: 100%;
-	overflow: hidden;
-}
-
-.common_main_container .herolist_wrapper > ul > li .merchandiselist li a .merchandisepic .unknown label {
-	display: block;
-	margin: 60px auto 0;
-	width: 85px;
-	height: 85px;
-	cursor: pointer;
-	background-image: url(../image/sprite.png);
-	background-position: -175px -90px;
-}
-
-.common_main_container .herolist_wrapper > ul > li .merchandiselist li a .merchandisepic .pricetag {
-	position: absolute;
-	bottom: 0;
-	width: 100%;
-	height: 50%;
-	opacity: 0.7;
-	-webkit-transition: all 0.3s;
-	transition: all 0.3s;
-}
-
-.common_main_container .herolist_wrapper > ul > li .merchandiselist li a .merchandisepic .pricetag .content {
-	padding: 10px 0 0 0;
-	position: absolute;
-	bottom: 10px;
-	width: 100%;
-	text-align: center;
-	color: #fff;
-	z-index: 1;
-}
-
-.common_main_container .herolist_wrapper > ul > li .merchandiselist li a .merchandisepic .pricetag .content .presentprice {
-	color: #ffd600;
-	font-size: 13px;
-	font-weight: bolder;
-}
-
-.common_main_container .herolist_wrapper > ul > li .merchandiselist li a .merchandisepic .pricetag .bg {
-	display: block;
-	width: 100%;
-	height: 100%;
-	background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(0, 0, 0, 0.8)));
-	position: absolute;
-	top: 0;
-	z-index: 0;
-}
-
-.common_main_container .herolist_wrapper > ul > li .merchandiselist li a .title {
-	margin: 5px 0 0 0;
-	width: 146px;
-	height: 35px;
-	line-height: 35px;
-	color: #955afb;
-	border: 2px solid #955afb;
-	text-align: center;
-	-webkit-transition: all 0.3s;
-	transition: all 0.3s;
-}
-
-.common_main_container .herolist_wrapper > ul > li .merchandiselist li a .title .arrow {
-	display: inline-block;
-	background-image: url(../image/sprite.png);
-	background-position: -476px -14px;
-	width: 20px;
-	height: 20px;
-	vertical-align: middle;
-}
-
-.common_main_container .herolist_wrapper > ul > li .merchandiselist li a .title label {
-	display: inline-block;
-	vertical-align: middle;
-}
-
-.common_main_container .herolist_wrapper > ul > li .merchandiselist li a:hover {
-	-webkit-transition: all 0.3s;
-	transition: all 0.3s;
-}
-
-.common_main_container .herolist_wrapper > ul > li .merchandiselist li a:hover .title {
-	color: #ffd600;
-	border: 2px solid #ffd600;
-}
-
-.common_main_container .herolist_wrapper > ul > li .merchandiselist li a:hover .arrow {
-	display: inline-block;
-	background-image: url(../image/sprite.png);
-	background-position: -501px -14px;
-	width: 20px;
-	height: 20px;
-	vertical-align: middle;
-}
-
-.common_main_container .herolist_wrapper > ul > li .merchandiselist li a:hover .pricetag {
-	display: block;
-	opacity: 1;
-	-webkit-transition: all 0.3s;
-	transition: all 0.3s;
-}
-
-.common_main_container .herolist_wrapper .dash {
-	margin: 65px 0 0 0;
-	width: 100%;
-	height: 13px;
-	font-size: 0;
-}
-
-.common_main_container .herolist_wrapper .dash .segment {
-	display: inline-block;
-	width: 480px;
-	height: 9px;
-	background-image: url(../image/sprite.png);
-	background-position: -355px 0px;
-}
-
-.common_main_container .rules {
-	margin: 0 auto;
-	width: 600px;
-	text-align: center;
-	color: #acacac;
-}
-
-.common_main_container .rules h1 {
-	font-size: 37px;
-	font-weight: lighter;
-	line-height: 70px;
-	color: #9279f3;
-}
-
-.common_main_container .rules ul li {
-	font-size: 13px;
-}
-
-.common_main_container .rules ul li span {
-	display: inline-block;
-	width: 15px;
-	height: 15px;
-	line-height: 15px;
-	background: #483a94;
-	border-radius: 50%;
-}
-
-.common_main_container .rules ul li label {
-	color: #ffe900;
-}
-
-.common_main_container .rules ul li a {
-	padding: 5px;
-	background: #9052fb;
-	font-size: 12px;
-}
-
-.common_main_container .rules ul li a:hover {
-	background: #862efb;
-	-webkit-transition: all 0.3s;
-	transition: all 0.3s;
-}
-
-.common_main_container .footer {
-	width: 100%;
-	height: 55px;
-	text-align: center;
-	color: #786fa5;
-	position: absolute;
-	bottom: 0;
-}
-
-.common_main_container .footer ul {
-	font-size: 0;
-	line-height: 18px;
-}
-
-.common_main_container .footer ul li {
-	display: inline-block;
-	line-height: 18px;
-	font-size: 12px;
-	vertical-align: middle;
-}
-
-.common_main_container .footer ul li a {
-	padding: 0 5px 0 4px;
-	color: #786fa5;
-	border-left: 1px solid #786fa5;
-}
-
-.common_main_container .footer ul li a:hover {
-	text-decoration: underline;
-}
-
-.common_main_container .footer ul li:first-child a {
-	border: 0;
-}
+  width: 100%;
+  height: 2860px;
+  background: url("../image/bg.jpg") no-repeat #eee;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  position: relative; }
+  .common_main_container .header {
+    width: 100%;
+    text-align: center;
+    font-size: 0;
+    position: absolute;
+    z-index: 1; }
+    .common_main_container .header .inner {
+      margin: 0 auto;
+      width: 960px; }
+      .common_main_container .header .inner .logo {
+        display: inline-block;
+        width: 50%; }
+        .common_main_container .header .inner .logo li {
+          display: inline-block;
+          margin: 0 10px 0 0;
+          vertical-align: middle;
+          background-image: url("../image/sprite.png"); }
+        .common_main_container .header .inner .logo .lol {
+          background-position: 0px -90px;
+          width: 170px;
+          height: 115px; }
+        .common_main_container .header .inner .logo .daojucheng {
+          background-position: 0px -210px;
+          width: 270px;
+          height: 65px; }
+      .common_main_container .header .inner .login {
+        display: inline-block;
+        width: 50%;
+        font-size: 18px;
+        text-align: right; }
+        .common_main_container .header .inner .login a {
+          color: #fff; }
+          .common_main_container .header .inner .login a:hover {
+            color: #ffe200; }
+  .common_main_container .banner {
+    width: 100%;
+    overflow: hidden;
+    transform: rotate(-7deg);
+    color: #fff; }
+    .common_main_container .banner .figure {
+      margin: 0 auto;
+      width: 580px; }
+      .common_main_container .banner .figure img {
+        display: block;
+        width: 100%; }
+    .common_main_container .banner .sologen {
+      margin: 285px 0 0 0;
+      width: 100%;
+      position: relative; }
+      .common_main_container .banner .sologen ul li {
+        width: 100%;
+        text-align: center;
+        position: relative; }
+        .common_main_container .banner .sologen ul li img {
+          display: inline-block; }
+        .common_main_container .banner .sologen ul li.title1 {
+          position: relative;
+          top: 10px;
+          right: 1250px;
+          transition: all 0.3s; }
+          .common_main_container .banner .sologen ul li.title1.active {
+            top: 10px;
+            right: 110px;
+            transition: all 0.3s; }
+        .common_main_container .banner .sologen ul li.title2 {
+          position: relative;
+          bottom: 0;
+          left: 1250px;
+          transition: all 0.3s; }
+          .common_main_container .banner .sologen ul li.title2.active {
+            bottom: 0;
+            left: 135px;
+            transition: all 0.3s; }
+    .common_main_container .banner .subtitle {
+      background-image: url("../image/sprite.png");
+      background-position: 0px -280px;
+      width: 270px;
+      height: 40px;
+      position: absolute;
+      right: 490px;
+      top: 90px;
+      opacity: 0; }
+      .common_main_container .banner .subtitle.active {
+        opacity: 1;
+        transition: all 1s; }
+    .common_main_container .banner .desc {
+      font-size: 20px;
+      text-align: center;
+      font-style: italic; }
+      .common_main_container .banner .desc .content1 {
+        position: relative;
+        right: 130px; }
+      .common_main_container .banner .desc .content2 {
+        position: relative;
+        left: 60px; }
+      .common_main_container .banner .desc .date {
+        margin: 10px 0 0 0; }
+        .common_main_container .banner .desc .date label {
+          display: inline-block;
+          margin: 0 5px 0 0;
+          height: 25px;
+          line-height: 25px;
+          color: #181b47;
+          font-weight: bolder;
+          position: relative; }
+          .common_main_container .banner .desc .date label span {
+            z-index: 2;
+            position: relative; }
+          .common_main_container .banner .desc .date label i {
+            display: inline-block;
+            padding: 0 0 0 5px;
+            width: 100%;
+            height: 100%;
+            background: #a841ff;
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 1;
+            transform: skew(-17deg);
+            vertical-align: middle; }
+      .common_main_container .banner .desc .button {
+        display: inline-block;
+        margin: 20px 0 0 0;
+        width: 350px;
+        height: 85px;
+        line-height: 85px;
+        font-size: 26px;
+        color: #ffd600;
+        transition: all 0.3s;
+        position: relative; }
+        .common_main_container .banner .desc .button .border {
+          display: block;
+          width: 100%;
+          height: 100%;
+          opacity: 1;
+          background-image: url(../image/sprite.png);
+          background-position: 0px 0px;
+          position: absolute;
+          top: 0; }
+        .common_main_container .banner .desc .button span {
+          font-weight: bold; }
+        .common_main_container .banner .desc .button:hover {
+          color: #c8a600;
+          transition: all 0.3s; }
+        .common_main_container .banner .desc .button:active {
+          color: #8a7300;
+          transition: all 0.3s; }
+          .common_main_container .banner .desc .button:active .border {
+            opacity: 1; }
+  .common_main_container .herolist_wrapper {
+    margin: 40px auto 150px;
+    width: 960px;
+    color: #fff; }
+    .common_main_container .herolist_wrapper > ul > li {
+      padding: 50px 0 0 0;
+      overflow: hidden; }
+      .common_main_container .herolist_wrapper > ul > li .title .name {
+        display: inline-block;
+        padding: 0 0 0 20px;
+        width: 600px;
+        font-size: 42px;
+        vertical-align: middle; }
+        .common_main_container .herolist_wrapper > ul > li .title .name label {
+          font-weight: bold; }
+        .common_main_container .herolist_wrapper > ul > li .title .name span {
+          color: #9052fb; }
+      .common_main_container .herolist_wrapper > ul > li .title .hint {
+        display: inline-block;
+        width: 230px;
+        font-size: 15px;
+        line-height: 50px;
+        vertical-align: middle;
+        text-align: right;
+        color: #9052fb; }
+        .common_main_container .herolist_wrapper > ul > li .title .hint span {
+          display: inline-block;
+          font-size: 100px;
+          line-height: 50px;
+          font-weight: bold;
+          vertical-align: middle;
+          color: #ffd600; }
+      .common_main_container .herolist_wrapper > ul > li .merchandiselist {
+        margin: 20px 0 0 0;
+        width: 100%; }
+        .common_main_container .herolist_wrapper > ul > li .merchandiselist li {
+          display: inline-block;
+          margin: 0 0 0 5px;
+          width: 150px;
+          height: 250px; }
+          .common_main_container .herolist_wrapper > ul > li .merchandiselist li a {
+            display: block;
+            width: 100%;
+            height: 250px; }
+            .common_main_container .herolist_wrapper > ul > li .merchandiselist li a .merchandisepic {
+              width: 100%;
+              height: 200px;
+              background-color: #1f224b;
+              position: relative; }
+              .common_main_container .herolist_wrapper > ul > li .merchandiselist li a .merchandisepic .unknown {
+                display: block;
+                width: 100%;
+                height: 100%;
+                overflow: hidden; }
+                .common_main_container .herolist_wrapper > ul > li .merchandiselist li a .merchandisepic .unknown label {
+                  display: block;
+                  margin: 60px auto 0;
+                  width: 85px;
+                  height: 85px;
+                  cursor: pointer;
+                  background-image: url(../image/sprite.png);
+                  background-position: -175px -90px; }
+              .common_main_container .herolist_wrapper > ul > li .merchandiselist li a .merchandisepic .pricetag {
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                height: 50%;
+                opacity: 0.7;
+                transition: all 0.3s; }
+                .common_main_container .herolist_wrapper > ul > li .merchandiselist li a .merchandisepic .pricetag .content {
+                  padding: 10px 0 0 0;
+                  position: absolute;
+                  bottom: 10px;
+                  width: 100%;
+                  text-align: center;
+                  color: #fff;
+                  z-index: 1; }
+                  .common_main_container .herolist_wrapper > ul > li .merchandiselist li a .merchandisepic .pricetag .content .presentprice {
+                    color: #ffd600;
+                    font-size: 13px;
+                    font-weight: bolder; }
+                .common_main_container .herolist_wrapper > ul > li .merchandiselist li a .merchandisepic .pricetag .bg {
+                  display: block;
+                  width: 100%;
+                  height: 100%;
+                  background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(0, 0, 0, 0.8)));
+                  position: absolute;
+                  top: 0;
+                  z-index: 0; }
+            .common_main_container .herolist_wrapper > ul > li .merchandiselist li a .title {
+              margin: 5px 0 0 0;
+              width: 146px;
+              height: 35px;
+              line-height: 35px;
+              color: #955afb;
+              border: 2px solid #955afb;
+              text-align: center;
+              transition: all 0.3s; }
+              .common_main_container .herolist_wrapper > ul > li .merchandiselist li a .title .arrow {
+                display: inline-block;
+                background-image: url(../image/sprite.png);
+                background-position: -476px -14px;
+                width: 20px;
+                height: 20px;
+                vertical-align: middle; }
+              .common_main_container .herolist_wrapper > ul > li .merchandiselist li a .title label {
+                display: inline-block;
+                vertical-align: middle; }
+            .common_main_container .herolist_wrapper > ul > li .merchandiselist li a:hover {
+              transition: all 0.3s; }
+              .common_main_container .herolist_wrapper > ul > li .merchandiselist li a:hover .title {
+                color: #ffd600;
+                border: 2px solid #ffd600; }
+              .common_main_container .herolist_wrapper > ul > li .merchandiselist li a:hover .arrow {
+                display: inline-block;
+                background-image: url(../image/sprite.png);
+                background-position: -501px -14px;
+                width: 20px;
+                height: 20px;
+                vertical-align: middle; }
+              .common_main_container .herolist_wrapper > ul > li .merchandiselist li a:hover .pricetag {
+                display: block;
+                opacity: 1;
+                transition: all 0.3s; }
+    .common_main_container .herolist_wrapper .dash {
+      margin: 65px 0 0 0;
+      width: 100%;
+      height: 13px;
+      font-size: 0; }
+      .common_main_container .herolist_wrapper .dash .segment {
+        display: inline-block;
+        width: 480px;
+        height: 9px;
+        background-image: url(../image/sprite.png);
+        background-position: -355px 0px; }
+  .common_main_container .rules {
+    margin: 0 auto;
+    width: 600px;
+    text-align: center;
+    color: #acacac; }
+    .common_main_container .rules h1 {
+      font-size: 37px;
+      font-weight: lighter;
+      line-height: 70px;
+      color: #9279f3; }
+    .common_main_container .rules ul li {
+      font-size: 13px; }
+      .common_main_container .rules ul li span {
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        line-height: 15px;
+        background: #483a94;
+        border-radius: 50%; }
+      .common_main_container .rules ul li label {
+        color: #ffe900; }
+      .common_main_container .rules ul li a {
+        padding: 5px;
+        background: #9052fb;
+        font-size: 12px; }
+        .common_main_container .rules ul li a:hover {
+          background: #862efb;
+          transition: all 0.3s; }
+  .common_main_container .footer {
+    width: 100%;
+    height: 55px;
+    text-align: center;
+    color: #786fa5;
+    position: absolute;
+    bottom: 0; }
+    .common_main_container .footer ul {
+      font-size: 0;
+      line-height: 18px; }
+      .common_main_container .footer ul li {
+        display: inline-block;
+        line-height: 18px;
+        font-size: 12px;
+        vertical-align: middle; }
+        .common_main_container .footer ul li a {
+          padding: 0 5px 0 4px;
+          color: #786fa5;
+          border-left: 1px solid #786fa5; }
+          .common_main_container .footer ul li a:hover {
+            text-decoration: underline; }
+        .common_main_container .footer ul li:first-child a {
+          border: 0; }
 
 .common_avatar_item {
-	display: inline-block;
-	width: 75px;
-	height: 75px;
-	border: 2px solid #7245cb;
-	border-radius: 50%;
-	vertical-align: middle;
-	background-image: url(../image/sprite.png);
-	background-position: -176px -90px;
-	background-color: #2e285b;
-}
+  display: inline-block;
+  width: 75px;
+  height: 75px;
+  border: 2px solid #7245cb;
+  border-radius: 50%;
+  vertical-align: middle;
+  background-image: url(../image/sprite.png);
+  background-position: -176px -90px;
+  background-color: #2e285b; }
 
 .herolistindex_wrapper {
-	width: 150px;
-	position: fixed;
-	top: 140px;
-	right: 75px;
-}
-
-.herolistindex_wrapper .gototop {
-	display: block;
-	margin: 0 auto;
-	background-image: url(../image/sprite.png);
-	background-position: -415px -14px;
-	width: 56px;
-	height: 40px;
-}
-
-.herolistindex_wrapper ul li {
-	display: inline-block;
-	margin: 10px 0;
-	width: 60px;
-	height: 60px;
-	border: 4px solid #955afb;
-	border-radius: 50%;
-	opacity: 0.5;
-	vertical-align: middle;
-	-webkit-transition: all 0.3s;
-	transition: all 0.3s;
-}
-
-.herolistindex_wrapper ul li a {
-	display: inline-block;
-	width: 100%;
-	height: 100%;
-}
-
-.herolistindex_wrapper ul li a .unknown {
-	display: inline-block;
-	width: 100%;
-	height: 100%;
-	background-image: url(../image/sprite.png);
-	background-position: -352px -11px;
-	vertical-align: middle;
-}
-
-.herolistindex_wrapper ul li a img {
-	display: inline-block;
-	width: 100%;
-	height: 100%;
-}
-
-.herolistindex_wrapper ul li.active {
-	opacity: 1;
-	border: 4px solid #ffe200;
-}
-
-.herolistindex_wrapper ul li:hover {
-	opacity: 1;
-	-webkit-transition: all 0.3s;
-	transition: all 0.3s;
-}
-
-/*# sourceMappingURL=common.css.map */
+  width: 150px;
+  position: fixed;
+  top: 140px;
+  right: 75px; }
+  .herolistindex_wrapper .gototop {
+    display: block;
+    margin: 0 auto;
+    background-image: url(../image/sprite.png);
+    background-position: -415px -14px;
+    width: 56px;
+    height: 40px; }
+  .herolistindex_wrapper ul li {
+    display: inline-block;
+    margin: 10px 0;
+    width: 60px;
+    height: 60px;
+    border: 4px solid #955afb;
+    border-radius: 50%;
+    opacity: 0.5;
+    vertical-align: middle;
+    transition: all 0.3s; }
+    .herolistindex_wrapper ul li a {
+      display: inline-block;
+      width: 100%;
+      height: 100%; }
+      .herolistindex_wrapper ul li a .unknown {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        background-image: url(../image/sprite.png);
+        background-position: -352px -11px;
+        vertical-align: middle; }
+      .herolistindex_wrapper ul li a img {
+        display: inline-block;
+        width: 100%;
+        height: 100%; }
+    .herolistindex_wrapper ul li.active {
+      opacity: 1;
+      border: 4px solid #ffe200; }
+    .herolistindex_wrapper ul li:hover {
+      opacity: 1;
+      transition: all 0.3s; }
