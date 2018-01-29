@@ -75,7 +75,7 @@ html, body {
 		.sologen {
 			margin: 285px 0 0 0;
 			width: 100%;
-
+			position: relative;
 			ul {
 				li {
 					//width: 620px;
@@ -109,6 +109,20 @@ html, body {
 						}
 					}
 				}
+			}
+		}
+		.subtitle{
+			background-image: url("../image/sprite.png");
+			background-position: 0px -280px;
+			width: 270px;
+			height: 40px;
+			position: absolute;
+			right: 490px;
+			top: 90px;
+			opacity: 0;
+			&.active{
+				opacity: 1;
+				transition: all 1s;
 			}
 		}
 		.desc {
@@ -309,7 +323,7 @@ html, body {
 								.arrow {
 									display: inline-block;
 									background-image: url(../image/sprite.png);
-									background-position: -526px -14px;
+									background-position: -476px -14px;
 									width: 20px;
 									height: 20px;
 									vertical-align: middle;
@@ -328,7 +342,7 @@ html, body {
 								.arrow {
 									display: inline-block;
 									background-image: url(../image/sprite.png);
-									background-position: -476px -14px;
+									background-position: -501px -14px;
 									width: 20px;
 									height: 20px;
 									vertical-align: middle;

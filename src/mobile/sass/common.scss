@@ -26,11 +26,16 @@ html, body {
 			background-size: 20rem;
 			vertical-align: middle;
 			position: relative;
+			bottom: 5rem;
 			z-index: 1;
 			font-size: 0.75rem;
 			color: #fff;
 			span {
 				color: #ffff00;
+			}
+			&.active{
+				bottom:0;
+				transition: all 0.3s;
 			}
 		}
 		.block {
@@ -40,10 +45,12 @@ html, body {
 		}
 		.avatar {
 			display: inline-block;
+			margin: 0.2rem 0 0 0;
 			width: 6rem;
-			vertical-align: top;
+			vertical-align: middle;
 			box-sizing: border-box;
 			position: relative;
+			font-size: 0;
 			.picture {
 				width: 2.2rem;
 				height: 2.2rem;
@@ -63,34 +70,77 @@ html, body {
 				vertical-align: middle;
 				color: #fff;
 				text-shadow: 0 2px 5px #333;
-				p {
-					display: block;
-					font-size: 0.5rem;
+				> div {
+					display: inline-block;
+					margin: 0 0.2rem;
+					height: 2rem;
+					vertical-align: middle;
+					p {
+						display: block;
+						height: 0.2rem;
+						font-size: 0.5rem;
 
+					}
+					label {
+						display: block;
+						font-size: 1.75rem;
+						line-height: 2rem;
+						text-align: left;
+						color: #fff900;
+						font-weight: bold;
+					}
 				}
-				label {
-					display: block;
-					font-size: 1.75rem;
-					line-height: 2rem;
-					text-align: left;
-					color: #fff900;
-					font-weight: bold;
+
+				span {
+					display: none;
+					vertical-align: middle;
+					opacity: 1;
+					font-size: 0.8rem;
+					position: relative;
+					bottom: 0;
+					transition: all 0s;
+					&.active {
+						display: inline-block;
+						opacity: 1;
+						transition: all 2s;
+						animation: fadeOut 2s;
+					}
+				}
+				@keyframes fadeOut {
+					from {
+						opacity: 1;
+						bottom: 0;
+
+					}
+					to {
+						opacity: 0;
+						bottom: 0.5rem;
+
+					}
 				}
 			}
 			&.left {
 				text-align: left;
-				top: 0.3rem;
-				left: 0.3rem;
+				top: 0;
+				left: -5rem;
 				label {
 					text-align: left;
+				}
+				&.active {
+					left: 0;
+					transition: all 0.3s;
 				}
 			}
 			&.right {
 				text-align: right;
-				top: 0.3rem;
-				right: 0.3rem;
+				top: 0;
+				right: -5rem;
 				label {
 					text-align: right;
+				}
+				&.active {
+					right: 0;
+					transition: all 0.3s;
 				}
 			}
 		}

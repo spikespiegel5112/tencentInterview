@@ -15,8 +15,11 @@
                 <img src="image/static/avatar_1_00000.jpg">
             </div>
             <div class="desc">
-                <p>帅了个呆</p>
-                <label>28</label>
+                <div>
+                    <p>帅了个呆</p>
+                    <label>28</label>
+                </div>
+                <span>+3</span>
             </div>
         </div>
         <div class="vesus">
@@ -24,8 +27,11 @@
         </div>
         <div class="avatar right">
             <div class="desc">
-                <p>帅了个呆</p>
-                <label>28</label>
+                <span>+3</span>
+                <div>
+                    <p>寂寞如雷</p>
+                    <label>86</label>
+                </div>
             </div>
             <div class="picture">
                 <img src="image/static/avatar_2_00000.jpg">
@@ -111,9 +117,9 @@
                         baseline: 320
                     })
                 },
-                minus: function(){
+                minus: function () {
                     var progress = 100;
-                    var that=this;
+                    var that = this;
 
                     setInterval(function () {
                         progress--;
@@ -130,9 +136,37 @@
                         item.style = 'width:' + thisProgress + '%;';
                     })
                 },
+                animation: function () {
+                    var avatarElList = document.querySelectorAll('.header .avatar');
+                    console.log(document.querySelectorAll('.header .avatar'));
+                    setTimeout(function () {
+                        document.querySelectorAll('.header .avatar').forEach(function (item) {
+                            item.classList.add("active")
+                        })
+                        document.querySelectorAll('.header .vesus')[0].classList.add('active')
+                    }, 100);
+                    var buttonElList = document.querySelectorAll('.selection ul li');
+                    buttonElList.forEach(function (item, index) {
+                        buttonElList[index].onclick = function (e) {
+                            console.log(avatarElList[index])
+                            avatarElList[index].children[1].children[1].className = 'active';
+                            setTimeout(function () {
+                                avatarElList[index].children[1].children[1].className = '';
+                            }, 2000)
+                        };
+                        buttonElList[1].onclick = function (e) {
+                            console.log(avatarElList[index])
+                            avatarElList[index].children[0].children[0].className = 'active';
+                            setTimeout(function () {
+                                avatarElList[index].children[0].children[0].className = '';
+                            }, 2000)
+                        }
+                    })
+                },
                 init: function () {
                     this.remResizing();
-                    this.minus()
+                    this.minus();
+                    this.animation();
                 }
             }
             index.init();

@@ -1,17 +1,19 @@
 html, body {
 	min-height: 100%;
-	font: 12px/1.5 arial,"\5FAE\8F6F\96C5\9ED1",sans-serif;
 }
 
 * {
 	-webkit-tap-highlight-color: transparent;
+	-webkit-tap-highlight-color: transparent;
 	/* For some Androids */
 }
+
 .common_main_container {
 	width: 100%;
 	min-height: 100%;
 	background: url("../image/bg_00000.jpg") no-repeat #eee;
 	background-size: contain;
+	position: relative;
 }
 
 .common_main_container .header {
@@ -29,6 +31,7 @@ html, body {
 	background-size: 20rem;
 	vertical-align: middle;
 	position: relative;
+	bottom: 5rem;
 	z-index: 1;
 	font-size: 0.75rem;
 	color: #fff;
@@ -36,6 +39,11 @@ html, body {
 
 .common_main_container .header .vesus span {
 	color: #ffff00;
+}
+
+.common_main_container .header .vesus.active {
+	bottom: 0;
+	transition: all 0.3s;
 }
 
 .common_main_container .header .block {
@@ -46,10 +54,12 @@ html, body {
 
 .common_main_container .header .avatar {
 	display: inline-block;
+	margin: 0.2rem 0 0 0;
 	width: 6rem;
-	vertical-align: top;
+	vertical-align: middle;
 	box-sizing: border-box;
 	position: relative;
+	font-size: 0;
 }
 
 .common_main_container .header .avatar .picture {
@@ -74,12 +84,20 @@ html, body {
 	text-shadow: 0 2px 5px #333;
 }
 
-.common_main_container .header .avatar .desc p {
+.common_main_container .header .avatar .desc > div {
+	display: inline-block;
+	margin: 0 0.2rem;
+	height: 2rem;
+	vertical-align: middle;
+}
+
+.common_main_container .header .avatar .desc > div p {
 	display: block;
+	height: 0.2rem;
 	font-size: 0.5rem;
 }
 
-.common_main_container .header .avatar .desc label {
+.common_main_container .header .avatar .desc > div label {
 	display: block;
 	font-size: 1.75rem;
 	line-height: 2rem;
@@ -88,24 +106,74 @@ html, body {
 	font-weight: bold;
 }
 
+.common_main_container .header .avatar .desc span {
+	display: none;
+	vertical-align: middle;
+	opacity: 1;
+	font-size: 0.8rem;
+	position: relative;
+	bottom: 0;
+	transition: all 0s;
+}
+
+.common_main_container .header .avatar .desc span.active {
+	display: inline-block;
+	opacity: 1;
+	transition: all 2s;
+	-webkit-animation: fadeOut 2s;
+	animation: fadeOut 2s;
+}
+
+@-webkit-keyframes fadeOut {
+	from {
+		opacity: 1;
+		bottom: 0;
+	}
+	to {
+		opacity: 0;
+		bottom: 0.5rem;
+	}
+}
+
+@keyframes fadeOut {
+	from {
+		opacity: 1;
+		bottom: 0;
+	}
+	to {
+		opacity: 0;
+		bottom: 0.5rem;
+	}
+}
+
 .common_main_container .header .avatar.left {
 	text-align: left;
-	top: 0.3rem;
-	left: 0.3rem;
+	top: 0;
+	left: -5rem;
 }
 
 .common_main_container .header .avatar.left label {
 	text-align: left;
 }
 
+.common_main_container .header .avatar.left.active {
+	left: 0;
+	transition: all 0.3s;
+}
+
 .common_main_container .header .avatar.right {
 	text-align: right;
-	top: 0.3rem;
-	right: 0.3rem;
+	top: 0;
+	right: -5rem;
 }
 
 .common_main_container .header .avatar.right label {
 	text-align: right;
+}
+
+.common_main_container .header .avatar.right.active {
+	right: 0;
+	transition: all 0.3s;
 }
 
 .common_main_container .blackboard {
@@ -338,6 +406,9 @@ html, body {
 
 .common_main_container .selection ul li a:active {
 	box-shadow: 0 0 0 #4ed918;
+	-webkit-transform: translateY(0.2rem);
 	transform: translateY(0.2rem);
 	transition: all 0.1s;
 }
+
+/*# sourceMappingURL=common.css.map */

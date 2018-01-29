@@ -18,7 +18,22 @@ gulp.task('sprite', function () {
 gulp.task('sass', function () {
     gulp.src('./sass/**/*.scss')
         .pipe(sass.sync().on('error', sass.logError))
-        .pipe(gulp.dest('./css'));
+        .pipe(gulp.dest('./css'))
+
+});
+
+gulp.task('postcss', function () {
+    var postcss      = require('gulp-postcss');
+    var sourcemaps   = require('gulp-sourcemaps');
+    var autoprefixer = require('autoprefixer');
+
+    return gulp.src('./css/*.css')
+        .pipe(sourcemaps.init())
+        .pipe(postcss([ autoprefixer({
+            browsers:['ie 7-11','Firefox > 20', 'last 2 versions' ]
+        }) ]))
+        .pipe(sourcemaps.write('.'))
+        .pipe(gulp.dest('./dest'));
 });
 
 gulp.task('watch', function () {

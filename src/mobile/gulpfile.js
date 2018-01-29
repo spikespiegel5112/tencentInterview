@@ -21,6 +21,20 @@ gulp.task('sass', function () {
         .pipe(gulp.dest('./css'));
 });
 
+gulp.task('postcss', function () {
+    var postcss      = require('gulp-postcss');
+    var sourcemaps   = require('gulp-sourcemaps');
+    var autoprefixer = require('autoprefixer');
+
+    return gulp.src('./css/*.css')
+        .pipe(sourcemaps.init())
+        .pipe(postcss([ autoprefixer({
+            browsers:['> 1% ']
+        }) ]))
+        .pipe(sourcemaps.write('.'))
+        .pipe(gulp.dest('./dest'));
+});
+
 gulp.task('watch', function () {
     gulp.watch('./sass/**/*.scss', ['sass']);
 });

@@ -36,6 +36,7 @@
                     <img src="image/title_2_00000.png"/>
                 </li>
             </ul>
+            <div class="subtitle"></div>
         </div>
         <div class="desc">
             <p class="content1">每位玩家在神秘商店都有1次抽折扣购买指定道具的机会</p>
@@ -576,10 +577,12 @@
 					var listScrollTop = 0;
 
 					window.onscroll = function () {
-						if (document.body.scrollTop - offset <= 0) {
+					    var scrollTop=document.body.scrollTop||document.documentElement.scrollTop;
+					    console.log(scrollTop)
+						if (scrollTop - offset <= 0) {
 							listScrollTop = 0
 						} else {
-							listScrollTop = document.body.scrollTop - offset
+							listScrollTop = scrollTop - offset
 						}
 						this.listScrollTop = listScrollTop;
 						if (listScrollTop > 470 * heroListLength) {
@@ -617,24 +620,26 @@
 				goTo: function (range) {
 					range = (typeof range === 'undefined') ? 0 : range;
 					var period = 5;
-					var listScrollTop = document.body.scrollTop;
-					var timer = function () {
+                    var scrollTop=document.body.scrollTop||document.documentElement.scrollTop;
+
+                    var timer = function () {
 						setTimeout(function () {
-							if (listScrollTop > range) {
-								if (Math.abs(listScrollTop - range) < 30) {
-									listScrollTop -= Math.abs(listScrollTop - range);
+							if (scrollTop > range) {
+								if (Math.abs(scrollTop - range) < 30) {
+                                    scrollTop -= Math.abs(scrollTop - range);
 								} else {
-									listScrollTop -= 30;
+                                    scrollTop -= 30;
 								}
-							} else if (listScrollTop < range) {
-								if (Math.abs(listScrollTop - range) < 30) {
-									listScrollTop += Math.abs(listScrollTop - range);
+							} else if (scrollTop < range) {
+								if (Math.abs(scrollTop - range) < 30) {
+                                    scrollTop += Math.abs(scrollTop - range);
 								} else {
-									listScrollTop += 30;
+                                    scrollTop += 30;
 								}
 							}
-							document.body.scrollTop = document.documentElement.scrollTop = listScrollTop;
-							if (listScrollTop - range !== 0) {
+                            document.body.scrollTop = document.documentElement.scrollTop = scrollTop;
+
+                            if (scrollTop - range !== 0) {
 								timer()
 							}
 						}, period)
@@ -657,7 +662,9 @@
 							sologenEl[i].className = sologenEl[i].className + ' active'
 						}
 					}, 500);
-
+                    setTimeout(function () {
+                        getElementsByClassName('.subtitle')[0].className='subtitle active'
+                    }, 2000)
 					console.log(sologenEl)
 
 				},
