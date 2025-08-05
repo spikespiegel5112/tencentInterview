@@ -1,12 +1,32 @@
 {
+  "name": "tencentinterview",
+  "version": "1.0.0",
+  "description": "",
+  "main": "pc.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/spikespiegel5112/tencentInterview.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/spikespiegel5112/tencentInterview/issues"
+  },
+  "homepage": "https://github.com/spikespiegel5112/tencentInterview#readme",
   "devDependencies": {
-    "gulp": "^3.9.1",
+    "gulp": "^5.0.1",
     "gulp-autoprefixer": "^4.1.0",
     "gulp-postcss": "^7.0.1",
-    "gulp-sass": "^3.1.0",
+    "gulp-sass": "^6.0.1",
     "gulp-sourcemaps": "^2.6.4",
     "gulp-watch": "^5.0.0",
     "gulp.spritesmith": "^6.9.0",
+    "merge-stream": "^2.0.0",
+    "sass": "^1.89.2",
     "spritesmith": "^3.3.0"
-  }
+  },
+  "dependencies": {}
 }
