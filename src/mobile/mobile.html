@@ -1,176 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no"/>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0 user-scalable=no"
+    />
     <title>Title</title>
-    <link rel="stylesheet" href="assets/css/reset.css"/>
-    <link rel="stylesheet" href="css/common.css"/>
-</head>
-<body>
-<div class="common_main_container">
-    <div class="header">
+    <link rel="stylesheet" href="assets/css/reset.css" />
+    <link rel="stylesheet" href="css/common.css" />
+  </head>
+  <body>
+    <div class="common_main_container">
+      <div class="header">
         <div class="avatar left">
-            <div class="picture">
-                <img src="image/static/avatar_1_00000.jpg">
+          <div class="picture">
+            <img src="image/static/avatar_1_00000.jpg" />
+          </div>
+          <div class="desc">
+            <div>
+              <p>帅了个呆</p>
+              <label>28</label>
             </div>
-            <div class="desc">
-                <div>
-                    <p>帅了个呆</p>
-                    <label>28</label>
-                </div>
-                <span>+3</span>
-            </div>
+            <span>+3</span>
+          </div>
         </div>
-        <div class="vesus">
-            第<span>17</span>题
-        </div>
+        <div class="vesus">第<span>17</span>题</div>
         <div class="avatar right">
-            <div class="desc">
-                <span>+3</span>
-                <div>
-                    <p>寂寞如雷</p>
-                    <label>86</label>
-                </div>
+          <div class="desc">
+            <span>+3</span>
+            <div>
+              <p>寂寞如雷</p>
+              <label>86</label>
             </div>
-            <div class="picture">
-                <img src="image/static/avatar_2_00000.jpg">
-            </div>
+          </div>
+          <div class="picture">
+            <img src="image/static/avatar_2_00000.jpg" />
+          </div>
         </div>
-    </div>
-    <div class="blackboard">
-        <p class="stem">
-            提莫几级可以种蘑菇？
-        </p>
+      </div>
+      <div class="blackboard">
+        <p class="stem">提莫几级可以种蘑菇？</p>
         <ul class="subject">
-            <li>
-                <p><label class="a">A：</label>1级</p>
-            </li>
-            <li>
-                <p><label class="b">B：</label>6级</p>
-            </li>
+          <li>
+            <p><label class="a">A：</label>1级</p>
+          </li>
+          <li>
+            <p><label class="b">B：</label>6级</p>
+          </li>
         </ul>
-
-    </div>
-    <div class="statistic">
+      </div>
+      <div class="statistic">
         <div class="countdown">
-            <div class="background"></div>
-            <div class="progress">
-                <ul>
-                    <li>
-                    <span>
-                        <label></label>
-                    </span>
-                    </li>
-                    <li>
-                    <span>
-                        <label></label>
-                    </span>
-                    </li>
-                    <li>
-                    <span>
-                        <label></label>
-                    </span>
-                    </li>
-                </ul>
-                <label class="text">本题剩余时间，加油啊！</label>
-            </div>
-            <div class="second">
-                <label class="number">60</label>
-                <span class="text">秒</span>
-            </div>
-
+          <div class="background"></div>
+          <div class="progress">
+            <ul>
+              <li>
+                <span>
+                  <label></label>
+                </span>
+              </li>
+              <li>
+                <span>
+                  <label></label>
+                </span>
+              </li>
+              <li>
+                <span>
+                  <label></label>
+                </span>
+              </li>
+            </ul>
+            <label class="text">本题剩余时间，加油啊！</label>
+          </div>
+          <div class="second">
+            <label class="number">60</label>
+            <span class="text">秒</span>
+          </div>
         </div>
         <div class="credit">
-            <label class="number">1021</label>
-            <span class="text">当前已修学分</span>
+          <label class="number">1021</label>
+          <span class="text">当前已修学分</span>
         </div>
-    </div>
-    <div class="selection">
+      </div>
+      <div class="selection">
         <ul>
-            <li>
-                <a class="a">
-                    <label>A</label>
-                    <span>A</span>
-                </a>
-            </li>
-            <li>
-                <a class="b">
-                    <label>B</label>
-                    <span>B</span>
-                </a>
-            </li>
+          <li>
+            <a class="a">
+              <label>A</label>
+              <span>A</span>
+            </a>
+          </li>
+          <li>
+            <a class="b">
+              <label>B</label>
+              <span>B</span>
+            </a>
+          </li>
         </ul>
+      </div>
     </div>
-
-</div>
-</body>
-<script src="assets/js/jquery-3.3.1.min.js"></script>
-<script src="js/util.js"></script>
-<script>
+  </body>
+  <script src="assets/js/jquery-3.3.1.min.js"></script>
+  <script src="js/util.js"></script>
+  <script>
     (function () {
-        $(function () {
-            var index = {
-                remResizing: function () {
-                    $.remResizing({
-                        fontSize: 20,
-                        baseline: 320
-                    })
-                },
-                minus: function () {
-                    var progress = 100;
-                    var that = this;
+      $(function () {
+        var index = {
+          remResizing: function () {
+            $.remResizing({
+              fontSize: 20,
+              baseline: 320,
+            });
+          },
+          minus: function () {
+            var progress = 100;
+            var that = this;
 
-                    setInterval(function () {
-                        progress--;
-                        console.log(progress)
-                        that.progress(progress);
-                    }, 1000);
-                },
-                progress: function (progress) {
-                    var progressEl = document.querySelectorAll('.countdown .progress li');
-                    progressEl.forEach(function (item, index) {
-                        var thisProgress = 0;
-                        progress / 33.3 >= 1 ? thisProgress = 33.3 : thisProgress = progress % 33.3;
-                        progress = progress - thisProgress;
-                        item.style = 'width:' + thisProgress + '%;';
-                    })
-                },
-                animation: function () {
-                    var avatarElList = document.querySelectorAll('.header .avatar');
-                    console.log(document.querySelectorAll('.header .avatar'));
-                    setTimeout(function () {
-                        document.querySelectorAll('.header .avatar').forEach(function (item) {
-                            item.classList.add("active")
-                        })
-                        document.querySelectorAll('.header .vesus')[0].classList.add('active')
-                    }, 100);
-                    var buttonElList = document.querySelectorAll('.selection ul li');
-                    buttonElList.forEach(function (item, index) {
-                        buttonElList[index].onclick = function (e) {
-                            console.log(avatarElList[index])
-                            avatarElList[index].children[1].children[1].className = 'active';
-                            setTimeout(function () {
-                                avatarElList[index].children[1].children[1].className = '';
-                            }, 2000)
-                        };
-                        buttonElList[1].onclick = function (e) {
-                            console.log(avatarElList[index])
-                            avatarElList[index].children[0].children[0].className = 'active';
-                            setTimeout(function () {
-                                avatarElList[index].children[0].children[0].className = '';
-                            }, 2000)
-                        }
-                    })
-                },
-                init: function () {
-                    this.remResizing();
-                    this.minus();
-                    this.animation();
-                }
-            }
-            index.init();
-        })
-    })($)
-</script>
+            setInterval(function () {
+              progress--;
+              console.log(progress);
+              that.progress(progress);
+            }, 1000);
+          },
+          progress: function (progress) {
+            var progressEl = document.querySelectorAll(
+              ".countdown .progress li"
+            );
+            progressEl.forEach(function (item, index) {
+              var thisProgress = 0;
+              progress / 33.3 >= 1
+                ? (thisProgress = 33.3)
+                : (thisProgress = progress % 33.3);
+              progress = progress - thisProgress;
+              item.style = "width:" + thisProgress + "%;";
+            });
+          },
+          animation: function () {
+            var avatarElList = document.querySelectorAll(".header .avatar");
+            console.log(document.querySelectorAll(".header .avatar"));
+            setTimeout(function () {
+              document
+                .querySelectorAll(".header .avatar")
+                .forEach(function (item) {
+                  item.classList.add("active");
+                });
+              document
+                .querySelectorAll(".header .vesus")[0]
+                .classList.add("active");
+            }, 100);
+            var buttonElList = document.querySelectorAll(".selection ul li");
+            buttonElList.forEach(function (item, index) {
+              buttonElList[index].onclick = function (e) {
+                console.log(avatarElList[index]);
+                avatarElList[index].children[1].children[1].className =
+                  "active";
+                setTimeout(function () {
+                  avatarElList[index].children[1].children[1].className = "";
+                }, 2000);
+              };
+              buttonElList[1].onclick = function (e) {
+                console.log(avatarElList[index]);
+                avatarElList[index].children[0].children[0].className =
+                  "active";
+                setTimeout(function () {
+                  avatarElList[index].children[0].children[0].className = "";
+                }, 2000);
+              };
+            });
+          },
+          init: function () {
+            this.remResizing();
+            this.minus();
+            this.animation();
+          },
+        };
+        index.init();
+      });
+    })($);
+  </script>
 </html>
